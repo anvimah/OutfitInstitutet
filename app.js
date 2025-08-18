@@ -19,7 +19,7 @@ const PRODUCTS = [
   { id: 'p008', name: 'Byxa — Rak, Svart',         price: 549,  category: 'Byxor',      image: 'https://picsum.photos/seed/pantssvart/800/1000?grayscale' },
   { id: 'p009', name: 'Jeans — Ljus tvätt',        price: 599,  category: 'Jeans',      image: 'https://picsum.photos/seed/jeanslight/800/1000?grayscale' },
   { id: 'p010', name: 'Jeans — Mörk tvätt',        price: 599,  category: 'Jeans',      image: 'https://picsum.photos/seed/jeansdark/800/1000?grayscale' },
-  { id: 'p011', name: 'T-shirt — Vit',             price: 199,  category: 'T-shirts',   image: 'https://picsum.photos/seed/teewhite/800/1000?grayscale' },
+  { id: 'p011', name: 'T-shirt — Vit',             price: 199,  category: 'T-shirts',   image: 'https://www.zara.com/se/sv/stickad-t-shirt-med-snitt-p01198457.html?v1=470213285&v2=2420409' },
   { id: 'p012', name: 'T-shirt — Svart',           price: 199,  category: 'T-shirts',   image: 'https://picsum.photos/seed/teeblack/800/1000?grayscale' },
   { id: 'p013', name: 'Loafers — Läder, Svart',    price: 999,  category: 'Skor',       image: 'https://picsum.photos/seed/loafers1/800/1000?grayscale' },
   { id: 'p014', name: 'Sneakers — Vit',            price: 899,  category: 'Skor',       image: 'https://picsum.photos/seed/sneakers1/800/1000?grayscale' },
@@ -237,4 +237,5 @@ function showToast(text){
   clearTimeout(toastTimer);
   toastTimer = setTimeout(()=>{ t.classList.remove('show'); setTimeout(()=>t.hidden=true,220); }, 1500);
 }
+
 
