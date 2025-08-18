@@ -7,7 +7,7 @@ const formatCurrency = (value) =>
 const PRODUCTS = [
   { id: 'l01', name: 'Kappa — Ull, Svart',      price: 1499, category: 'Jackor',   image: 'https://cdn.pixabay.com/photo/2021/07/01/05/18/woman-6378281_1280.jpg' },
   { id: 'l02', name: 'Trench — Sand',           price: 1399, category: 'Jackor',   image: 'https://picsum.photos/seed/trenchsand/900/1200' },
-  { id: 'l03', name: 'Skjorta — Poplin Vit',    price: 499,  category: 'Skjortor', image: 'https://picsum.photos/seed/shirtwhite2/900/1200' },
+  { id: 'l03', name: 'Skjorta — Poplin Svart',    price: 499,  category: 'Skjortor', image: 'https://cdn.pixabay.com/photo/2024/09/23/10/39/man-9068618_1280.jpg' },
   { id: 'l04', name: 'Stickad — Offwhite',      price: 699,  category: 'Stickat',  image: 'https://picsum.photos/seed/knitow2/900/1200' },
   { id: 'l05', name: 'Byxa — Rak, Beige',       price: 649,  category: 'Byxor',    image: 'https://cdn.pixabay.com/photo/2024/02/12/15/18/woman-8568749_1280.jpg' },
   { id: 'l06', name: 'Sneakers — Vit',          price: 999,  category: 'Skor',     image: 'https://cdn.pixabay.com/photo/2020/05/03/19/09/nike-5126389_1280.jpg' },
@@ -282,6 +282,7 @@ function showToast(text){
     setTimeout(() => els.toast.hidden = true, 220);
   }, 1400);
 }
+
 
 
 
