@@ -7,14 +7,26 @@ const formatCurrency = (value) =>
   Lägg dina bilder i /images och uppdatera sökvägarna nedan.
   Tips: använd .webp för lättare filer.
 */
+// ---------- Produkter (mock) ----------
 const PRODUCTS = [
-  { id: 'p1', name: 'Kappa — Svart', price: 1299, category: 'Jackor', image: 'images/kappa-svart.jpg' },
-  { id: 'p2', name: 'Skjorta — Vit Poplin', price: 399, category: 'Skjortor', image: 'images/skjorta-vit.jpg' },
-  { id: 'p3', name: 'Byxa — Rak, Beige', price: 549, category: 'Byxor', image: 'images/byxa-beige.jpg' },
-  { id: 'p4', name: 'Knit — Offwhite', price: 499, category: 'Stickat', image: 'images/knit-offwhite.jpg' },
-  { id: 'p5', name: 'T-shirt — Svart', price: 199, category: 'T-shirts', image: 'images/tshirt-svart.jpg' },
-  { id: 'p6', name: 'Loafers — Läder', price: 999, category: 'Skor', image: 'images/loafers.jpg' },
+  { id: 'p001', name: 'Kappa — Ull, Svart',        price: 1299, category: 'Jackor',     image: 'https://picsum.photos/seed/kappa1/800/1000?grayscale', badge: 'Nyhet' },
+  { id: 'p002', name: 'Trench — Sand',             price: 1199, category: 'Jackor',     image: 'https://picsum.photos/seed/trench1/800/1000?grayscale' },
+  { id: 'p003', name: 'Skjorta — Poplin Vit',      price: 399,  category: 'Skjortor',   image: 'https://picsum.photos/seed/shirtwhite/800/1000?grayscale', badge: 'Bäst säljare' },
+  { id: 'p004', name: 'Skjorta — Oversize, Blå',   price: 429,  category: 'Skjortor',   image: 'https://picsum.photos/seed/shirtblue/800/1000?grayscale' },
+  { id: 'p005', name: 'Stickad Tröja — Offwhite',  price: 499,  category: 'Stickat',    image: 'https://picsum.photos/seed/knit1/800/1000?grayscale' },
+  { id: 'p006', name: 'Stickad Tröja — Svart',     price: 499,  category: 'Stickat',    image: 'https://picsum.photos/seed/knit2/800/1000?grayscale' },
+  { id: 'p007', name: 'Byxa — Rak, Beige',         price: 549,  category: 'Byxor',      image: 'https://picsum.photos/seed/pantsbeige/800/1000?grayscale' },
+  { id: 'p008', name: 'Byxa — Rak, Svart',         price: 549,  category: 'Byxor',      image: 'https://picsum.photos/seed/pantssvart/800/1000?grayscale' },
+  { id: 'p009', name: 'Jeans — Ljus tvätt',        price: 599,  category: 'Jeans',      image: 'https://picsum.photos/seed/jeanslight/800/1000?grayscale' },
+  { id: 'p010', name: 'Jeans — Mörk tvätt',        price: 599,  category: 'Jeans',      image: 'https://picsum.photos/seed/jeansdark/800/1000?grayscale' },
+  { id: 'p011', name: 'T-shirt — Vit',             price: 199,  category: 'T-shirts',   image: 'https://picsum.photos/seed/teewhite/800/1000?grayscale' },
+  { id: 'p012', name: 'T-shirt — Svart',           price: 199,  category: 'T-shirts',   image: 'https://picsum.photos/seed/teeblack/800/1000?grayscale' },
+  { id: 'p013', name: 'Loafers — Läder, Svart',    price: 999,  category: 'Skor',       image: 'https://picsum.photos/seed/loafers1/800/1000?grayscale' },
+  { id: 'p014', name: 'Sneakers — Vit',            price: 899,  category: 'Skor',       image: 'https://picsum.photos/seed/sneakers1/800/1000?grayscale' },
+  { id: 'p015', name: 'Axelremsväska — Svart',     price: 799,  category: 'Accessoarer',image: 'https://picsum.photos/seed/bag1/800/1000?grayscale' },
+  { id: 'p016', name: 'Solglasögon — Smala',       price: 299,  category: 'Accessoarer',image: 'https://picsum.photos/seed/sunnies1/800/1000?grayscale' },
 ];
+
 
 // ---------- State & element ----------
 const state = { query: '', category: 'Alla', sort: 'relevance', cart: {} };
@@ -225,3 +237,4 @@ function showToast(text){
   clearTimeout(toastTimer);
   toastTimer = setTimeout(()=>{ t.classList.remove('show'); setTimeout(()=>t.hidden=true,220); }, 1500);
 }
+
