@@ -10,8 +10,8 @@ const PRODUCTS = [
   { id: 'l03', name: 'Skjorta — Poplin Vit',    price: 499,  category: 'Skjortor', image: 'https://picsum.photos/seed/shirtwhite2/900/1200' },
   { id: 'l04', name: 'Stickad — Offwhite',      price: 699,  category: 'Stickat',  image: 'https://picsum.photos/seed/knitow2/900/1200' },
   { id: 'l05', name: 'Byxa — Rak, Beige',       price: 649,  category: 'Byxor',    image: 'https://cdn.pixabay.com/photo/2024/02/12/15/18/woman-8568749_1280.jpg' },
-  { id: 'l06', name: 'Sneakers — Vit',          price: 999,  category: 'Skor',     image: 'https://picsum.photos/seed/sneakerwhite2/900/1200' },
-  { id: 'l07', name: 'Loafers — Svart Läder',   price: 1199, category: 'Skor',     image: 'https://picsum.photos/seed/loafersblack2/900/1200' },
+  { id: 'l06', name: 'Sneakers — Vit',          price: 999,  category: 'Skor',     image: 'https://cdn.pixabay.com/photo/2020/05/03/19/09/nike-5126389_1280.jpg' },
+  { id: 'l07', name: 'Loafers — Svart Läder',   price: 1199, category: 'Skor',     image: 'https://cdn.pixabay.com/photo/2021/12/13/12/08/shoes-6868119_1280.jpg' },
   { id: 'l08', name: 'Axelremsväska — Svart',   price: 899,  category: 'Accessoarer', image: 'https://cdn.pixabay.com/photo/2016/11/23/18/12/bag-1854148_1280.jpg' },
 ];
 
@@ -282,6 +282,7 @@ function showToast(text){
     setTimeout(() => els.toast.hidden = true, 220);
   }, 1400);
 }
+
 
 
 
