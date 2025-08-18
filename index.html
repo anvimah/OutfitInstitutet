@@ -3,73 +3,47 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Studio — Shop</title>
-  <meta name="description" content="Stilren webbshop i minimalistisk mode-stil." />
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <title>Studio Market — Arket-inspirerad shop</title>
   <link rel="stylesheet" href="styles.css" />
   <script defer src="app.js"></script>
 </head>
 <body>
   <!-- Header -->
   <header class="site-header">
-    <a class="brand" href="#top" aria-label="Startsida">
-      <span class="brand-name">STUDIO</span>
-    </a>
-    <nav class="main-nav" aria-label="Huvudmeny">
-      <a href="#" class="nav-link">Nyheter</a>
-      <a href="#" class="nav-link">Dam</a>
-      <a href="#" class="nav-link">Herr</a>
-      <a href="#" class="nav-link">Accessoarer</a>
-    </nav>
-    <div class="header-actions">
-      <input id="searchInput" class="search" type="search" placeholder="Sök" aria-label="Sök produkter" />
+    <a class="brand" href="#top" aria-label="Gå till startsidan">STUDIO MARKET</a>
+    <nav class="nav">
       <button id="cartButton" class="cart-button" aria-expanded="false" aria-controls="cartDrawer">
-        <span class="cart-count" id="cartCount">0</span>
-        Varukorg
+        <span class="cart-count" id="cartCount">0</span> Varukorg
       </button>
-    </div>
+    </nav>
   </header>
 
-  <!-- Hero / kampanj -->
-  <section class="hero" id="top" aria-label="Kampanj">
-    <div class="hero-media">
-      <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1600&auto=format&fit=crop" alt="Minimalistisk modekampanj" />
-    </div>
-    <div class="hero-copy">
-      <h1>AW Capsule</h1>
-      <p>Skulpterade siluetter i neutrala toner – bygg din garderob för säsongen.</p>
-      <a class="btn primary" href="#produkterna">Handla kollektionen</a>
+  <!-- Hero -->
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <h1>Nya baser för vardagen</h1>
+      <p>Reducerade silhuetter i naturtoner. Funktion möter form — skapad för att hålla.</p>
+      <a href="#catalog" class="hero-cta">Se kollektionen</a>
     </div>
   </section>
 
-  <main class="container" id="produkterna">
-    <!-- Filterrad -->
+  <main class="container" id="catalog">
+    <!-- Controls -->
     <section class="controls" aria-label="Filter och sortering">
-      <label class="select">
-        <span class="label">Kategori</span>
-        <select id="categorySelect"></select>
-      </label>
-      <label class="select">
-        <span class="label">Sortera</span>
-        <select id="sortSelect">
-          <option value="relevance">Relevans</option>
-          <option value="price-asc">Pris: Lågt → Högt</option>
-          <option value="price-desc">Pris: Högt → Lågt</option>
-          <option value="name-asc">Namn: A → Ö</option>
-          <option value="name-desc">Namn: Ö → A</option>
-        </select>
-      </label>
+      <input id="searchInput" type="search" placeholder="Sök (t.ex. ‘kappa’)" autocomplete="off" />
+      <select id="categorySelect"></select>
+      <select id="sortSelect">
+        <option value="relevance">Sortera</option>
+        <option value="price-asc">Pris: Lågt → Högt</option>
+        <option value="price-desc">Pris: Högt → Lågt</option>
+        <option value="name-asc">Namn: A → Ö</option>
+        <option value="name-desc">Namn: Ö → A</option>
+      </select>
     </section>
 
-    <!-- Produktgrid -->
-    <section id="productGrid" class="product-grid" aria-live="polite">
-      <!-- Renderas av app.js -->
-    </section>
+    <!-- Grid -->
+    <section id="productGrid" class="product-grid" aria-live="polite"></section>
   </main>
-
-  <!-- Toast -->
-  <div id="toast" class="toast" hidden></div>
 
   <!-- Cart Drawer -->
   <div id="cartOverlay" class="cart-overlay" hidden></div>
@@ -80,22 +54,18 @@
     </div>
     <ul id="cartItems" class="cart-items"></ul>
     <div class="cart-summary">
-      <div class="row">
-        <span>Delsumma</span>
-        <strong id="cartSubtotal">0 kr</strong>
-      </div>
-      <button id="checkoutButton" class="btn primary block">Gå till kassan</button>
-      <button id="clearCartButton" class="btn ghost block">Töm kundvagn</button>
+      <div class="row"><span>Delsumma</span><strong id="cartSubtotal">0 kr</strong></div>
+      <button id="checkoutButton" class="primary">Gå till kassan</button>
+      <button id="clearCartButton" class="secondary">Töm</button>
     </div>
   </aside>
 
+  <!-- Toast -->
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
   <!-- Footer -->
   <footer class="site-footer">
-    <p>© <span id="year"></span> Studio — Demo-shop utan backend.</p>
+    © <span id="year"></span> Studio Market — demo utan backend.
   </footer>
-
-  <noscript>
-    <p class="noscript">Den här sidan kräver JavaScript för att fungera.</p>
-  </noscript>
 </body>
 </html>
