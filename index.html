@@ -3,18 +3,30 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="En enkel, responsiv webbshop byggd med HTML, CSS och JavaScript." />
+  <meta name="description" content="En stilren, responsiv webbshop byggd med HTML, CSS och JavaScript." />
   <title>Min Webbshop</title>
   <link rel="stylesheet" href="styles.css" />
   <script defer src="app.js"></script>
 </head>
 <body>
+  <!-- Announce bar -->
+  <div class="announce">
+    Fri frakt över 499 kr • Fria returer i 30 dagar
+  </div>
+
+  <!-- Header -->
   <header class="site-header">
-    <div class="brand">
-      <span class="logo" aria-hidden="true">🛍️</span>
+    <a class="brand" href="#top" aria-label="Gå till startsidan">
+      <span class="logo">🛍️</span>
       <span class="brand-name">Min Webbshop</span>
-    </div>
+    </a>
+
     <div class="header-actions">
+      <label class="theme-toggle" title="Byt tema">
+        <input id="themeToggle" type="checkbox" aria-label="Ljust/darkt tema">
+        <span class="slider"></span>
+      </label>
+
       <button id="cartButton" class="cart-button" aria-expanded="false" aria-controls="cartDrawer">
         <span class="cart-count" id="cartCount">0</span>
         <span>Varukorg</span>
@@ -22,31 +34,55 @@
     </div>
   </header>
 
-  <main class="container">
-    <section class="controls">
-      <label class="visually-hidden" for="searchInput">Sök produkter</label>
-      <input id="searchInput" type="search" placeholder="Sök produkter..." autocomplete="off" />
-      
-      <label class="visually-hidden" for="categorySelect">Kategori</label>
-      <select id="categorySelect">
-        <option value="alla">Alla kategorier</option>
-      </select>
+  <!-- Hero -->
+  <section class="hero" id="top" aria-label="Introduktion">
+    <div class="hero-inner">
+      <h1>Stil som håller längre</h1>
+      <p>En kuraterad butik med tidlösa plagg och prylar. Handla tryggt, enkelt och snyggt – helt utan krångel.</p>
+      <a class="hero-cta" href="#produkterna">Upptäck nyheter</a>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="orb orb-a"></div>
+      <div class="orb orb-b"></div>
+      <div class="orb orb-c"></div>
+    </div>
+  </section>
 
-      <label class="visually-hidden" for="sortSelect">Sortera</label>
-      <select id="sortSelect">
-        <option value="relevance">Sortera: Relevans</option>
-        <option value="price-asc">Pris: Lågt → Högt</option>
-        <option value="price-desc">Pris: Högt → Lågt</option>
-        <option value="name-asc">Namn: A → Ö</option>
-        <option value="name-desc">Namn: Ö → A</option>
-      </select>
+  <main class="container" id="produkterna">
+    <!-- Filter/Sort -->
+    <section class="controls" aria-label="Filtrera och sortera produkterna">
+      <div class="control">
+        <label class="visually-hidden" for="searchInput">Sök produkter</label>
+        <input id="searchInput" type="search" placeholder="🔎 Sök produkter..." autocomplete="off" />
+      </div>
+
+      <div class="control">
+        <label class="visually-hidden" for="categorySelect">Kategori</label>
+        <select id="categorySelect"></select>
+      </div>
+
+      <div class="control">
+        <label class="visually-hidden" for="sortSelect">Sortera</label>
+        <select id="sortSelect">
+          <option value="relevance">Relevans</option>
+          <option value="price-asc">Pris: Lågt → Högt</option>
+          <option value="price-desc">Pris: Högt → Lågt</option>
+          <option value="name-asc">Namn: A → Ö</option>
+          <option value="name-desc">Namn: Ö → A</option>
+        </select>
+      </div>
     </section>
 
+    <!-- Produktgrid -->
     <section id="productGrid" class="product-grid" aria-live="polite">
-      <!-- Produkter renderas här av app.js -->
+      <!-- Renderas av app.js -->
     </section>
   </main>
 
+  <!-- Toasts -->
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+  <!-- Cart Drawer -->
   <div id="cartOverlay" class="cart-overlay" hidden></div>
   <aside id="cartDrawer" class="cart-drawer" aria-hidden="true" tabindex="-1">
     <div class="cart-header">
