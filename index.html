@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="En enkel, responsiv webbshop byggd med HTML, CSS och JavaScript." />
+  <title>Min Webbshop</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <span class="logo" aria-hidden="true">🛍️</span>
+      <span class="brand-name">Min Webbshop</span>
+    </div>
+    <div class="header-actions">
+      <button id="cartButton" class="cart-button" aria-expanded="false" aria-controls="cartDrawer">
+        <span class="cart-count" id="cartCount">0</span>
+        <span>Varukorg</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="controls">
+      <label class="visually-hidden" for="searchInput">Sök produkter</label>
+      <input id="searchInput" type="search" placeholder="Sök produkter..." autocomplete="off" />
+      
+      <label class="visually-hidden" for="categorySelect">Kategori</label>
+      <select id="categorySelect">
+        <option value="alla">Alla kategorier</option>
+      </select>
+
+      <label class="visually-hidden" for="sortSelect">Sortera</label>
+      <select id="sortSelect">
+        <option value="relevance">Sortera: Relevans</option>
+        <option value="price-asc">Pris: Lågt → Högt</option>
+        <option value="price-desc">Pris: Högt → Lågt</option>
+        <option value="name-asc">Namn: A → Ö</option>
+        <option value="name-desc">Namn: Ö → A</option>
+      </select>
+    </section>
+
+    <section id="productGrid" class="product-grid" aria-live="polite">
+      <!-- Produkter renderas här av app.js -->
+    </section>
+  </main>
+
+  <div id="cartOverlay" class="cart-overlay" hidden></div>
+  <aside id="cartDrawer" class="cart-drawer" aria-hidden="true" tabindex="-1">
+    <div class="cart-header">
+      <h2>Kundvagn</h2>
+      <button id="closeCart" class="icon-button" aria-label="Stäng kundvagn">✕</button>
+    </div>
+    <ul id="cartItems" class="cart-items"></ul>
+    <div class="cart-summary">
+      <div class="row">
+        <span>Delsumma</span>
+        <strong id="cartSubtotal">0 kr</strong>
+      </div>
+      <button id="checkoutButton" class="primary">Gå till kassan</button>
+      <button id="clearCartButton" class="secondary">Töm kundvagn</button>
+    </div>
+  </aside>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Min Webbshop — demo utan backend.</p>
+  </footer>
+
+  <noscript>
+    <p>Den här sidan kräver JavaScript för att fungera. Aktivera JavaScript i din webbläsare.</p>
+  </noscript>
+</body>
+</html>
