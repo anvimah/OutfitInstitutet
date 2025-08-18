@@ -5,7 +5,7 @@ const formatCurrency = (value) =>
 // ===== Produkter (med bilder) =====
 // Byt gärna till egna bilder i /images. Dessa använder picsum som exempel.
 const PRODUCTS = [
-  { id: 'l01', name: 'Kappa — Ull, Svart',      price: 1499, category: 'Jackor',   image: 'https://picsum.photos/seed/coatblack/900/1200' },
+  { id: 'l01', name: 'Kappa — Ull, Svart',      price: 1499, category: 'Jackor',   image: 'https://cdn.pixabay.com/photo/2021/07/01/05/18/woman-6378281_1280.jpg' },
   { id: 'l02', name: 'Trench — Sand',           price: 1399, category: 'Jackor',   image: 'https://picsum.photos/seed/trenchsand/900/1200' },
   { id: 'l03', name: 'Skjorta — Poplin Vit',    price: 499,  category: 'Skjortor', image: 'https://picsum.photos/seed/shirtwhite2/900/1200' },
   { id: 'l04', name: 'Stickad — Offwhite',      price: 699,  category: 'Stickat',  image: 'https://picsum.photos/seed/knitow2/900/1200' },
@@ -282,5 +282,6 @@ function showToast(text){
     setTimeout(() => els.toast.hidden = true, 220);
   }, 1400);
 }
+
 
 
