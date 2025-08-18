@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Studio Market — Arket-inspirerad shop</title>
+  <title>Studio Market — Stilren & Livfull</title>
   <link rel="stylesheet" href="styles.css" />
   <script defer src="app.js"></script>
 </head>
@@ -18,18 +18,24 @@
     </nav>
   </header>
 
-  <!-- Hero -->
-  <section class="hero" id="top">
+  <!-- Hero (parallax bakgrund + diskreta orbs) -->
+  <section class="hero" id="top" aria-label="Introduktion">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="orb orb-a"></div>
+      <div class="orb orb-b"></div>
+    </div>
     <div class="hero-inner">
-      <h1>Nya baser för vardagen</h1>
-      <p>Reducerade silhuetter i naturtoner. Funktion möter form — skapad för att hålla.</p>
-      <a href="#catalog" class="hero-cta">Se kollektionen</a>
+      <h1 data-animate="fade-up">Baskollektion med puls</h1>
+      <p data-animate="fade-up" data-delay="0.06">
+        Tidlös design i naturtoner — med små detaljer som väcker liv.
+      </p>
+      <a href="#catalog" class="hero-cta" data-animate="fade-up" data-delay="0.12">Upptäck nu</a>
     </div>
   </section>
 
   <main class="container" id="catalog">
-    <!-- Controls -->
-    <section class="controls" aria-label="Filter och sortering">
+    <!-- Filter/Sort -->
+    <section class="controls" aria-label="Filter och sortering" data-animate="fade-up">
       <input id="searchInput" type="search" placeholder="Sök (t.ex. ‘kappa’)" autocomplete="off" />
       <select id="categorySelect"></select>
       <select id="sortSelect">
@@ -64,7 +70,7 @@
   <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
 
   <!-- Footer -->
-  <footer class="site-footer">
+  <footer class="site-footer" data-animate="fade-up">
     © <span id="year"></span> Studio Market — demo utan backend.
   </footer>
 </body>
